@@ -1,1 +1,3 @@
-/*    /index.html   200
+/api/tutor/chat    /.netlify/functions/tutor-chat    200
+/api/health        /.netlify/functions/health        200
+/*                 /index.html                       200
