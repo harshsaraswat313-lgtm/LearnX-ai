@@ -1,0 +1,6 @@
+{
+  "name": "LearnX AI",
+  "description": "AI-powered personalized learning platform that pinpoints knowledge gaps, generates customized roadmaps, adapts with an intelligent tutor, and accelerates subject mastery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
