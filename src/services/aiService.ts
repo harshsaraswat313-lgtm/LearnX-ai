@@ -43,17 +43,20 @@ export const aiService = {
         body: JSON.stringify({ message, topic, level, history }),
       });
 
-      if (res.ok) {
+      const contentType = res.headers.get('content-type') || '';
+      if (res.ok && contentType.includes('application/json')) {
         const data = await res.json();
-        return {
-          reply: data.reply,
-          source: data.source || 'gemini',
-          level,
-          topic,
-        };
+        if (data && data.reply) {
+          return {
+            reply: data.reply,
+            source: data.source || 'gemini',
+            level,
+            topic,
+          };
+        }
       }
     } catch (err) {
-      console.warn('Backend tutor endpoint unavailable, using resilient client heuristic:', err);
+      console.warn('Backend tutor endpoint notice, falling back smoothly:', err);
     }
 
     // Client-side instant fallback for maximum reliability
